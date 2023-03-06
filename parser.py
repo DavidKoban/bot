@@ -8,9 +8,14 @@ client = TelegramClient('session', api_id, api_hash)
 client.start()
 
 
-@client.on(events.NewMessage(-1001720393795))
+@client.on(events.NewMessage(-1001761229044))
 async def main(event):
     await client.forward_messages(-1001749214990, event.message, drop_author=True)
+
+
+@client.on(events.NewMessage(-1001394521081))
+async def main(event):
+    await client.forward_messages(-1001773857191, event.message, drop_author=True)
 
 while True:
     try:
