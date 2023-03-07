@@ -10,25 +10,21 @@ client.start()
 
 @client.on(events.NewMessage(-1001720393795))
 async def main(event):
-    print(event)
     await client.send_message(-1001761229044, event.meessage)
 
 
 @client.on(events.NewMessage(-1001394521081))
 async def main(event):
-    print(event)
     await client.send_message(-1001854214387, event.message)
 
 
 @client.on(events.NewMessage(-1001455185560))
 async def main(event):
-    print(event)
     await client.send_message(-1001668289354, event.message)
 
 
 @client.on(events.NewMessage(-1001638369964))
 async def main(event):
-    print(event)
     await client.send_message(-1001878712248, event.message)
 
 while True:
