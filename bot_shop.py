@@ -454,11 +454,11 @@ try:
                         button2 = types.InlineKeyboardButton("PayPal", callback_data='222')
                         button3 = types.InlineKeyboardButton("⬅️Изменить сумму продажи", callback_data='333')
                         markup1.add(button1, button2, button3)
-                        msg = bot.send_message(call.from_user.id,
-                                       "Enter your PayPal\n\n🚨Make sure you entered the PayPal correctly. Otherwise, the funds will be lost.🚨",
-                                       parse_mode='Markdown')
+                        msg = bot.send_message(message1.from_user.id,
+                                               "Enter your PayPal\n\n🚨Make sure you entered the PayPal correctly. Otherwise, the funds will be lost.🚨",
+                                               parse_mode='Markdown')
 
-                bot.register_next_step_handler(msg, end, call, 'PayPal')
+                        bot.register_next_step_handler(msg, end, message1, 'PayPal')
                     else:
                         bot.send_message(message1.from_user.id,
                                          'ERROR: invalid deposit value. Try again or contact @Rakhmat_Karimov')
@@ -518,7 +518,7 @@ try:
                 else:
                     bot.send_message(message.from_user.id,
                                      'ERROR: invalid adress. Try again or contact @Rakhmat_Karimov')
-                    callback_inline1(call_1)
+                    adsf(message, coin, network)
 
             @bot.callback_query_handler(func=lambda call: call.data in ['123', '321'])
             def callback_inline2(call):
