@@ -454,9 +454,11 @@ try:
                         button2 = types.InlineKeyboardButton("PayPal", callback_data='222')
                         button3 = types.InlineKeyboardButton("⬅️Изменить сумму продажи", callback_data='333')
                         markup1.add(button1, button2, button3)
-                        bot.send_message(message1.from_user.id,
-                                         "*Your deposit: " + price + " " + coin1.replace('SELL', '') + ".*\n\nIf everything is correct, choose your *kind* of USD wallet.",
-                                         parse_mode='Markdown', reply_markup=markup1)
+                        msg = bot.send_message(call.from_user.id,
+                                       "Enter your PayPal\n\n🚨Make sure you entered the PayPal correctly. Otherwise, the funds will be lost.🚨",
+                                       parse_mode='Markdown')
+
+                bot.register_next_step_handler(msg, end, call, 'PayPal')
                     else:
                         bot.send_message(message1.from_user.id,
                                          'ERROR: invalid deposit value. Try again or contact @Rakhmat_Karimov')
