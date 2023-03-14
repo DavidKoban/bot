@@ -1,0 +1,1 @@
+{"fee": 0.015, "client":{"key": "4u1WsL7M8QkEKYN75B2h80TAZOWvjSKtjQKxzG2t2e9XUSZ1uLPKyzBcgqzxJpch", "secret": "KKKJvRzViiBAu9KXX2LEVSTtVMgnwxhfW6np5osDL3MheKahR0JWZN1bHoBfSk6j"}}
