@@ -476,7 +476,7 @@ try:
             elif call.data == '222':
                 bot.clear_step_handler_by_chat_id(chat_id=call.message.chat.id)
                 msg = bot.send_message(call.from_user.id,
-                                       "Напишите адресс и время для встречи",
+                                       "Напишите адрес и время для встречи",
                                        parse_mode='Markdown')
 
                 bot.register_next_step_handler(msg, place, coin, price, "Продажа")
@@ -575,7 +575,7 @@ try:
                 price = str(message1.text).replace(' ', '').replace(coin1, '').replace(',', '.')
                 try:
                     if float(price) >= float(f"{200 / curses[coin1]:.6f}"):
-                        choose(message, price, coin1, network, bla)
+                        choose(message1, price, coin1, network, bla)
                     else:
                         bot.send_message(message1.from_user.id,
                                          'ОШИБКА: неверная сумма депозита. Попробуйте еще раз или свяжитесь @Rakhmat_Karimov')
@@ -600,13 +600,18 @@ try:
         @bot.callback_query_handler(func=lambda call: call.data in ['444', '555', '666'])
         def callback_inline1(call):
             if call.data == '444':
-                bot.clear_step_handler_by_chat_id(chat_id=call.message.chat.id)
-                haha(message, price, coin, network)
+                bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
+                msg = bot.send_message(message.from_user.id,
+                                       "Отправьте адрес " + coin.replace(
+                                           'BUY', '') + " (" + network + ")" + " *кошелька:*",
+                                       parse_mode='Markdown')
+
+                bot.register_next_step_handler(msg, end_buy, message, )
 
             elif call.data == '555':
                 bot.clear_step_handler_by_chat_id(chat_id=call.message.chat.id)
                 msg = bot.send_message(call.from_user.id,
-                                       "Напишите адресс и время для встречи",
+                                       "Напишите адрес и время для встречи",
                                        parse_mode='Markdown')
 
                 bot.register_next_step_handler(msg, place, coin, price, "Покупка")
@@ -614,15 +619,6 @@ try:
                 bot.clear_step_handler_by_chat_id(chat_id=call.message.chat.id)
                 call.data = zn
                 callback_inline(call)
-
-        def haha(message1, price, coin1, network):
-            bot.clear_step_handler_by_chat_id(chat_id=message1.chat.id)
-            msg = bot.send_message(message1.from_user.id,
-                                   "Отправьте адрес " + coin1.replace(
-                                       'BUY', '') + " (" + network + ")" + " *кошелька:*",
-                                   parse_mode='Markdown')
-
-            bot.register_next_step_handler(msg, end_buy, message1, )
 
         def end_buy(message, call_1):
             global coin
