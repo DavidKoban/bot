@@ -601,7 +601,7 @@ try:
         def callback_inline1(call):
             if call.data == '444':
                 bot.clear_step_handler_by_chat_id(chat_id=message.chat.id)
-                msg = bot.send_message(message.from_user.id,
+                msg = bot.send_message(call.from_user.id,
                                        "Отправьте адрес " + coin.replace(
                                            'BUY', '') + " (" + network + ")" + " *кошелька:*",
                                        parse_mode='Markdown')
