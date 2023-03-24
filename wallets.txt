@@ -1,1 +1,0 @@
-{"BTC": {"BTC": "1Gq3ZgPtyvPi1uYTEizY1dKnv93YSn327B", "BEP20": "0xa557bacd44ec5166219d0bea0dc1dea968feae95"}, "ETH": {"ERC20": "0xa557bacd44ec5166219d0bea0dc1dea968feae95", "BEP20": "0xa557bacd44ec5166219d0bea0dc1dea968feae95"}, "USDT": {"ERC20": "0xa557bacd44ec5166219d0bea0dc1dea968feae95", "TRC20": "0xa557bacd44ec5166219d0bea0dc1dea968feae95"}}
