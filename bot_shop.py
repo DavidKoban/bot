@@ -35,7 +35,7 @@ try:
         itembtn3 = types.KeyboardButton('Поддержка ☎')
         markup.add(itembtn1, itembtn2, itembtn3)
         bot.send_message(message.from_user.id, "*Выберите действие:*", reply_markup=markup, parse_mode='Markdown')
-        if message.from_user.id == 266284325:
+        if message.from_user.id == 266284325 or message.from_user.id == 6039562417:
             button1 = types.InlineKeyboardButton("Изменить API", callback_data='1a')
             button2 = types.InlineKeyboardButton("Изменить крипто кошельки", callback_data='2a')
             button3 = types.InlineKeyboardButton("Изменить карту для оплаты", callback_data='3a')
